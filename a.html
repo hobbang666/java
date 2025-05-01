@@ -7,7 +7,8 @@
         <base href="http://127.0.0.1:5500">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-
+        <script type="text/javascript" src="js/js_test.js" defer></script>
+        <script type="text/javascript" src="js/search.js" defer></script>
         <title> 니케 비공식 홈페이지 </title>
         <style>
             body {
@@ -28,10 +29,10 @@
     </head>
     <body>
         <div style="display:flex; justify-content:left;">
-            <a href= "https://nikke-kr.com/" target="_blank"> <img src="nikkelogo.png" width="200"> </a>
             <nav class="navbar navbar-expand-lg bg-lightblue">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="http://127.0.0.1:5500/a.html">니케</a>
+                  <a class="navbar-brand" href="http://127.0.0.1:5500/a.html"></a>
+                  <a href= "https://nikke-kr.com/" target="_blank"> <img src="image/nikkelogo.png" width="200"> </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -61,17 +62,17 @@
                     </ul>
                     <form class="d-flex" role="search">
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">검색</button>
+                      <button class="btn btn-outline-success" id="search_button_msg" type="submit">검색</button>
                     </form>
                   </div>
                 </div>
               </nav>
         </div>
-        <a href="https://nikke-kr.com/" target="_blank"> <img src="nikke2_5.webp" width="880"> </a>
+        <a href="https://nikke-kr.com/" target="_blank"> <img class="img-fluid" src="image/nikke2_5.webp" width="880"> </a>
         <br>
         <p1 style="font-size:50px;">승리의 여신: 니케 2.5주년 이벤트 진행 중!</p1>
         <div style="display: flex; justify-content: center;">
-            <table border="4">
+            <table class="table" border="4">
                 <caption> 니케 2.5주년 출시 니케 목록 </caption>
                 <tbody>
                     <tr>
@@ -83,7 +84,7 @@
                         <td> 등급 </td>
                     </tr>
                     <tr>
-                        <td style="text-align:center; background-color: white;"><img src="mihara.gif" width="300" height="300"></td>>
+                        <td style="text-align:center; background-color: white;"><img src="image/mihara.gif" width="300" height="300"></td>>
                         <td style="text-align:center;">미하라: 본딩 체인</td>
                         <td style="background-color: rgb(250, 116, 116);">화력형</td>
                         <td style="text-align:center; background-color: rgb(237, 106, 106);">작열</td>
@@ -91,7 +92,7 @@
                         <td style="background-color: yellow;"> SSR </td>
                     </tr>
                     <tr>
-                        <td style="text-align:center; background-color: white;"><img src="sarien.gif" width="300" height="300"></td>>
+                        <td style="text-align:center; background-color: white;"><img src="image/sarien.gif" width="300" height="300"></td>>
                         <td style="text-align:center;">리틀 머메이드</td>
                         <td style="background-color: rgb(137, 243, 255);">지원형</td>
                         <td style="text-align:center; background-color: greenyellow;">풍압</td>
