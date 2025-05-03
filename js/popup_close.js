@@ -1,7 +1,7 @@
 var close_time; 
-var close_time2 = 10; 
+var close_time2 = 50; 
 clearTimeout(close_time); 
-close_time = setTimeout("close_window()", 10000);
+close_time = setTimeout("close_window()", 50000);
 
 function show_time() {
   let divClock = document.getElementById('Time');
