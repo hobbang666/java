@@ -27,7 +27,6 @@ const check_input = () => {
 
     if (emailValue === '') {
         alert('이메일을 입력하세요.');
-        login_failed();
         return false;
     }
 
@@ -88,14 +87,9 @@ const check_input = () => {
     console.log('이메일:', emailValue);
     console.log('비밀번호:', passwordValue);
     session_set(); // 세션 생성
-    const tokenPayload = {
-        email: emailValue
-    };
-    setCookie('fail_count', 0, 1); 
-    const jwtToken = generateJWT(tokenPayload);  // 
-    localStorage.setItem('jwt_token', jwtToken); // 
+    localStorage.setItem('jwt_token', jwtToken);
     loginForm.submit();
-    location.href = 'a.html';
+    location.href = 'solo_practice_4weeks.html';
 
    
 };            
@@ -139,49 +133,14 @@ function getCookie(name) {
     return ;
 }
 
-const MAX_FAIL_COUNT = 3;
-
-function login_failed() {
-    let failCount = parseInt(getCookie('fail_count')) || 0;
-    failCount += 1;
-    setCookie('fail_count', failCount, 1); // 쿠키에 1일 저장
-
-    alert(`로그인 실패! 현재 실패 횟수: ${failCount}회`);
-
-    const statusDiv = document.getElementById('login_status');
-    if (statusDiv) {
-        statusDiv.innerText = `로그인 실패 횟수: ${failCount} / ${MAX_FAIL_COUNT}`;
-    }
-
-    if (failCount >= MAX_FAIL_COUNT) {
-        alert("로그인 시도 횟수가 초과되어 로그인이 제한됩니다.");
-        if (statusDiv) {
-            statusDiv.innerText = `로그인 제한 상태입니다.`;
-        }
-    }
-}
-
 function init_logined(){
-if(sessionStorage){
-decrypt_text(); // 복호화 함수
-}
-else{
-alert("세션 스토리지 지원 x");
-}
-}
-
-
-document.getElementById("login_btn").addEventListener('click', () => {
-    const failCount = parseInt(getCookie('fail_count')) || 0;
-
-    if (failCount >= MAX_FAIL_COUNT) {
-        alert("로그인이 제한되었습니다. 관리자에게 문의하세요.");
-        const statusDiv = document.getElementById('login_status');
-        if (statusDiv) {
-            statusDiv.innerText = `로그인 제한 상태입니다.`;
-        }
-        return;
+    if(sessionStorage){
+        decrypt_text(); // 복호화 함수
     }
+    else{
+        alert("세션 스토리지 지원 x");
+    }
+}
 
-    check_input(); // 로그인 로직 실행
-});
+
+    document.getElementById("login_btn").addEventListener('click', check_input);

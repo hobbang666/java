@@ -10,5 +10,14 @@ function session_del() {//세션 삭제
 
 function logout(){
     session_del(); // 세션 삭제
+
+    if (localStorage) {
+        localStorage.removeItem('jwt_token');
+        alert('JWT 토큰을 삭제했습니다.');
+    } 
+    else {
+        alert('로컬스토리지 지원 x');
+    }
+
     location.href='a.html';
 }
