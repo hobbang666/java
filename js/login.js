@@ -95,11 +95,9 @@ const check_input = () => {
     const jwtToken = generateJWT(tokenPayload);  // 
     localStorage.setItem('jwt_token', jwtToken); // 
     loginForm.submit();
-    location.href = 'a.html';
+    location.href = 'login/index_login.html';
 
-   
 };            
-
 
 function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     const emailInput = document.getElementById('typeEmailX');
@@ -162,14 +160,14 @@ function login_failed() {
 }
 
 function init_logined(){
-if(sessionStorage){
-decrypt_text(); // 복호화 함수
-}
-else{
-alert("세션 스토리지 지원 x");
-}
-}
+    if(sessionStorage){
+        decrypt_text(); // 복호화 함수
+    }
 
+    else{
+        alert("세션 스토리지 지원 x");
+    }
+}
 
 document.getElementById("login_btn").addEventListener('click', () => {
     const failCount = parseInt(getCookie('fail_count')) || 0;
