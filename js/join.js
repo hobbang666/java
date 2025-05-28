@@ -53,13 +53,15 @@ function join(){ // 회원가입 기능
     if (!agree.checked) { // 약관 동의 확인
         alert("약관에 동의하셔야 가입이 가능합니다.");
         return;
-    }
-   ;
-    form.action = "../solo_practice_4weeks.html"; // 로그인 성공 시 이동
+    };
+    
+    form.action = "login/login.html"; // 로그인 성공 시 이동
     form.method = "get"; // 전송 방식
+
     if(name.value.length === 0 || email.value.length === 0 || password.value.length === 0 || re_password.length === 0){
         alert("회원가입 폼에 모든 정보를 입력해주세요.");
     }
+
     else{
         const newSignUp = new SignUp(name.value, email.value, password.value, re_password.value); // 회원가입 정보 객체 생성
         session_set2(newSignUp); // 세션 저장 및 객체 전달

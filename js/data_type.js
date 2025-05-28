@@ -42,6 +42,7 @@ for (const [username, user] of users) {
 const usernames = new Set();
 usernames.add("user1"); // 사용자 이름 추가
 usernames.add("user2");
+
 // Set 객체의 모든 사용자 이름 반복 출력
 for (const username of usernames) {
     console.log(`사용자 이름: ${username}`);
