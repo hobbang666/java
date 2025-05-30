@@ -19,5 +19,5 @@ function logout(){
         alert('로컬스토리지 지원 x');
     }
 
-    location.href='/java/index.html';
+    location.href='../index.html';
 }
