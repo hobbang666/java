@@ -95,7 +95,7 @@ const check_input = () => {
     const jwtToken = generateJWT(tokenPayload);  // 
     localStorage.setItem('jwt_token', jwtToken); // 
     loginForm.submit();
-    location.href = 'login/index_login.html';
+    location.href = '/java/login/index_login.html';
 
 };            
 
