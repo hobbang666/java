@@ -1,3 +1,5 @@
+kakao.maps.load(function() {
+
 // 마커를 담을 배열입니다
 var markers = [];
 
@@ -261,4 +263,6 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
         var resultDiv = document.getElementById('clickLatlng');
         resultDiv.innerHTML = message;
     });
+});
+
 });
