@@ -1,5 +1,3 @@
-kakao.maps.load(function() {
-
 // 마커를 담을 배열입니다
 var markers = [];
 
@@ -22,8 +20,7 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 searchPlaces();
 
 // 키워드 검색을 요청하는 함수입니다
-function searchPlaces(event) {
-    if (event) event.preventDefault();
+function searchPlaces() {
 
     var keyword = document.getElementById('keyword').value;
 
@@ -264,6 +261,4 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
         var resultDiv = document.getElementById('clickLatlng');
         resultDiv.innerHTML = message;
     });
-});
-
 });
