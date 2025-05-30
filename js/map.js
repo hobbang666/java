@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
+  if (typeof kakao === 'undefined' || !kakao.maps) {
+    console.error('Kakao Maps API가 로드되지 않았습니다. API 키와 도메인 설정을 확인하세요.');
+    return;
+  }
+
   var mapContainer = document.getElementById('map'),
       mapOption = {
           center: new kakao.maps.LatLng(37.566826, 126.9786567),
           level: 3
       };
 
-    var map = new kakao.maps.Map(mapContainer, mapOption);
+  var map = new kakao.maps.Map(mapContainer, mapOption);
     var ps = new kakao.maps.services.Places();
     var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
     var markers = [];
